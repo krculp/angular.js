@@ -27,19 +27,27 @@ var writes = callback.chain(function(){
   writer.copyDir('img', writes.waitFor());
   writer.copyDir('static', writes.waitFor());
   writer.copy('index.html', writes.waitFor());
-  writer.copy('docs.js', writes.waitFor());
-  writer.copy('docs.css', writes.waitFor());
-  writer.copy('doc_widgets.js', writes.waitFor());
-  writer.copy('doc_widgets.css', writes.waitFor());
+  writer.merge(['docs.js',
+                'doc_widgets.js'],
+               'docs-combined.js',
+               writes.waitFor());
+  writer.merge(['docs.css',
+                'doc_widgets.css'],
+               'docs-combined.css',
+               writes.waitFor());
   writer.copy('docs-scenario.html', writes.waitFor());
   writer.output('docs-scenario.js', ngdoc.scenarios(docs), writes.waitFor());
   writer.output('sitemap.xml', new SiteMap(docs).render(), writes.waitFor());
   writer.output('robots.txt', 'Sitemap: http://docs.angularjs.org/sitemap.xml\n', writes.waitFor());
-  writer.copy('syntaxhighlighter/shBrushJScript.js', writes.waitFor());
-  writer.copy('syntaxhighlighter/shBrushXml.js', writes.waitFor());
-  writer.copy('syntaxhighlighter/shCore.css', writes.waitFor());
-  writer.copy('syntaxhighlighter/shCore.js', writes.waitFor());
-  writer.copy('syntaxhighlighter/shThemeDefault.css', writes.waitFor());
+  writer.merge(['syntaxhighlighter/shCore.js',
+                'syntaxhighlighter/shBrushJScript.js',
+                'syntaxhighlighter/shBrushXml.js'],
+               'syntaxhighlighter/syntaxhighlighter-combined.js',
+               writes.waitFor());
+  writer.merge(['syntaxhighlighter/shCore.css',
+                'syntaxhighlighter/shThemeDefault.css'],
+               'syntaxhighlighter/syntaxhighlighter-combined.css',
+               writes.waitFor());
   writer.copy('jquery.min.js', writes.waitFor());
 });
 writes.onDone(function(){
