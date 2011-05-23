@@ -29,6 +29,7 @@ function Doc(text, file, line) {
   this.param = this.param || [];
   this.properties = this.properties || [];
   this.methods = this.methods || [];
+  this.links = this.links || [];
 }
 Doc.METADATA_IGNORE = (function(){
   var words = require('fs').readFileSync(__dirname + '/ignore.words', 'utf8');
@@ -56,36 +57,24 @@ Doc.prototype = {
     return words.join(' ');
   },
 
-
-  /*
-   * This function is here to act as a huristic based translator from the old style urls to
-   * the new style which use sections.
+  /**
+   * Converts relative urls (without section) into absolute
+   * Absolute url means url with section
+   *
+   * @example
+   * - if the link is inside any api doc:
+   * angular.widget -> api/angular.widget
+   *
+   * - if the link is inside any guid doc:
+   * intro -> guide/intro
+   *
+   * @param {string} url Absolute or relative url
+   * @returns {string} Absolute url
    */
-  sectionHuristic: function (url){
-    // if we are new styl URL with section/id then just return;
+  convertUrlToAbsolute: function(url) {
+    if (url.substr(-1) == '/') return url + 'index';
     if (url.match(/\//)) return url;
-    var match = url.match(/(\w+)(\.(.*))?/);
-    var section = match[1];
-    var id = match[3] || 'index';
-    switch(section) {
-      case 'angular':
-        section = 'api';
-        id = 'angular.' + id;
-        break;
-      case 'api':
-      case 'cookbook':
-      case 'guide':
-      case 'intro':
-      case 'tutorial':
-        break;
-      default:
-        id = section + '.' + id;
-        section = 'intro';
-    }
-    var newUrl = section + '/' + (id || 'index');
-    console.log('WARNING:', 'found old style url', url, 'at', this.file, this.line,
-        'converting to', newUrl);
-    return newUrl;
+    return this.section + '/' + url;
   },
 
   markdown: function (text) {
@@ -124,11 +113,17 @@ Doc.prototype = {
         text = text.replace(/<angular\/>/gm, '<tt>&lt;angular/&gt;</tt>');
         text = text.replace(/{@link\s+([^\s}]+)\s*([^}]*?)\s*}/g,
           function(_all, url, title){
-            var isFullUrl = url.match(IS_URL);
-            return '<a href="' + (isFullUrl ? '' + url : '#!' + self.sectionHuristic(url)) + '">'
-              + (url.match(IS_ANGULAR) ? '<code>' : '')
+            var isFullUrl = url.match(IS_URL),
+                // FIXME(vojta) angular link could be api/angular now with sections
+                isAngular = url.match(IS_ANGULAR),
+                absUrl = isFullUrl ? url : self.convertUrlToAbsolute(url);
+
+            if (!isFullUrl) self.links.push(absUrl);
+
+            return '<a href="' + (isFullUrl ? '' + url : '#!' + absUrl) + '">'
+              + (isAngular ? '<code>' : '')
               + (title || url).replace(/\n/g, ' ')
-              + (url.match(IS_ANGULAR) ? '</code>' : '')
+              + (isAngular ? '</code>' : '')
               + '</a>';
           });
         text = new Showdown.converter().makeHtml(text);
@@ -659,24 +654,33 @@ function indent(text, spaceCount) {
 
 //////////////////////////////////////////////////////////
 function merge(docs){
-  var byName = {};
-  docs.forEach(function(doc){
-    byName[doc.name] = doc;
+  var byFullId = {};
+
+  docs.forEach(function (doc) {
+    byFullId[doc.section + '/' + doc.id] = doc;
   });
-  for(var i=0; i<docs.length;) {
-    if (findParent(docs[i], 'method') ||
-          findParent(docs[i], 'property')) {
+
+  for(var i = 0; i < docs.length;) {
+    var doc = docs[i];
+
+    // check links - do they exist ?
+    doc.links.forEach(function(link) {
+      if (!byFullId[link]) console.log('WARNING: In ' + doc.section + '/' + doc.id + ', non existing link: "' + link + '"');
+    });
+
+    // merge into parents
+    if (findParent(doc, 'method') || findParent(doc, 'property')) {
       docs.splice(i, 1);
     } else {
       i++;
     }
   }
 
-  function findParent(doc, name){
-    var parentName = doc[name+'Of'];
+  function findParent(doc, name) {
+    var parentName = doc[name + 'Of'];
     if (!parentName) return false;
 
-    var parent = byName[parentName];
+    var parent = byFullId['api/' + parentName];
     if (!parent)
       throw new Error("No parent named '" + parentName + "' for '" +
           doc.name + "' in @" + name + "Of.");

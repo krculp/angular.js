@@ -194,6 +194,7 @@ p {
     position: relative;
     top: 1em;
     left: 1em;
+    width: 202px;
 }
 
 #sidebarArea {
@@ -224,6 +225,22 @@ p {
     font-size: 14px;
     line-height: 22px;
     padding-left: 25px;
+}
+
+li.level-0 {
+    font-size: 24px;
+    list-style: none;
+    margin-left: -20px;
+    padding-bottom: 10px;
+}
+
+li.level-1 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+li.level-2, li.level-3 {
+    margin-left: 20px;
 }
 
 #sideBarContent1 a.current {
