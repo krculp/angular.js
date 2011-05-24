@@ -1,7 +1,31 @@
 /**
  * @workInProgress
+ * @ngdoc overview
+ * @name angular.Widget
+ * @description
+ * 
+ * Widgets are custom DOM elements.  An angular widget can be either a custom 
+ * attribute that modifies an existing DOM elements or an entirely new DOM element.
+ * 
+ * Following is the list of built-in angular widgets:
+ * 
+ * * {@link angular.Widget.@ng:format ng:format} - Formats data for display to user and for storage.
+ * * {@link angular.Widget.@ng:non-bindable ng:non-bindable} - Blocks angular from processing an HTML element.
+ * * {@link angular.Widget.@ng:repeat ng:repeat} - Creates and manages a collection of cloned HTML elements.
+ * * {@link angular.Widget.@ng:required ng:required} - Verifies presence of user input.
+ * * {@link angular.Widget.@ng:validate ng:validate} - Validates content of user input.
+ * * {@link angular.Widget.HTML HTML} - Standard HTML processed by angular.
+ * * {@link angular.Widget.ng:view ng:view} - Works with $route to "include" partial templates
+ * * {@link angular.Widget.ng:switch ng:switch} - Conditionally changes DOM structure
+ * * {@link angular.Widget.ng:include ng:include} - Includes an external HTML fragment
+ *
+ * For more information about angular widgets, see {@link guide/widgets Understanding Angular
+ * Widgets} in the angular Developer Guide.
+ */
+/**
+ * @workInProgress
  * @ngdoc widget
- * @name angular.widget.HTML
+ * @name angular.Widget.HTML
  *
  * @description
  * The most common widgets you will use will be in the form of the
@@ -185,14 +209,16 @@ function compileFormatter(expr) {
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.widget.@ng:validate
+ * @name angular.Widget.@ng:validate
  *
  * @description
  * The `ng:validate` attribute widget validates the user input. If the input does not pass
- * validation, the `ng-validation-error` CSS class and the `ng:error` attribute are set on the input
+ * validation, the `ng-validation-error` CSS class and the `ng:error` attribute are set on the
+ input
  * element. Check out {@link angular.validator validators} to find out more.
  *
- * @param {string} validator The name of a built-in or custom {@link angular.validator validator} to
+ * @param {string} validator The name of a built-in or custom {@link angular.validator validator}
+ to
  *     to be used.
  *
  * @element INPUT
@@ -225,11 +251,12 @@ function compileFormatter(expr) {
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.widget.@ng:required
+ * @name angular.Widget.@ng:required
  *
  * @description
- * The `ng:required` attribute widget validates that the user input is present. It is a special case
- * of the {@link angular.widget.@ng:validate ng:validate} attribute widget.
+ * The `ng:required` attribute widget validates that the user input is present. It is a special
+ case
+ * of the {@link angular.Widget.@ng:validate ng:validate} attribute widget.
  *
  * @element INPUT
  * @css ng-validation-error
@@ -244,9 +271,11 @@ function compileFormatter(expr) {
       </doc:source>
       <doc:scenario>
        it('should check ng:required', function(){
-         expect(element('.doc-example-live :input').attr('className')).toMatch(/ng-validation-error/);
+         expect(element('.doc-example-live
+         :input').attr('className')).toMatch(/ng-validation-error/);
          input('value').enter('123');
-         expect(element('.doc-example-live :input').attr('className')).not().toMatch(/ng-validation-error/);
+         expect(element('.doc-example-live
+         :input').attr('className')).not().toMatch(/ng-validation-error/);
        });
       </doc:scenario>
     </doc:example>
@@ -254,7 +283,7 @@ function compileFormatter(expr) {
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.widget.@ng:format
+ * @name angular.Widget.@ng:format
  *
  * @description
  * The `ng:format` attribute widget formats stored data to user-readable text and parses the text
@@ -268,7 +297,8 @@ function compileFormatter(expr) {
  * @element INPUT
  *
  * @example
- * This example shows how the user input is converted from a string and internally represented as an
+ * This example shows how the user input is converted from a string and internally represented as
+ an
  * array.
  *
     <doc:example>
@@ -412,7 +442,8 @@ function noopAccessor() { return { get: noop, set: noop }; }
  * the validator to publish errors to it, so that the the error messages can be bound to it.
  *
  */
-var textWidget = inputWidget('keydown change', modelAccessor, valueAccessor, initWidgetValue(), true),
+var textWidget = inputWidget('keydown change', modelAccessor, valueAccessor, initWidgetValue(),
+true),
     buttonWidget = inputWidget('click', noopAccessor, noopAccessor, noop),
     INPUT_TYPE = {
       'text':            textWidget,
@@ -423,9 +454,11 @@ var textWidget = inputWidget('keydown change', modelAccessor, valueAccessor, ini
       'submit':          buttonWidget,
       'reset':           buttonWidget,
       'image':           buttonWidget,
-      'checkbox':        inputWidget('click', modelFormattedAccessor, checkedAccessor, initWidgetValue(false)),
+      'checkbox':        inputWidget('click', modelFormattedAccessor, checkedAccessor,
+      initWidgetValue(false)),
       'radio':           inputWidget('click', modelFormattedAccessor, radioAccessor, radioInit),
-      'select-one':      inputWidget('change', modelAccessor, valueAccessor, initWidgetValue(null)),
+      'select-one':      inputWidget('change', modelAccessor, valueAccessor,
+      initWidgetValue(null)),
       'select-multiple': inputWidget('change', modelAccessor, optionsAccessor, initWidgetValue([]))
 //      'file':            fileWidget???
     };
@@ -598,7 +631,7 @@ angularWidget('option', function(){
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.widget.ng:include
+ * @name angular.Widget.ng:include
  *
  * @description
  * Include external HTML fragment.
@@ -691,7 +724,7 @@ angularWidget('ng:include', function(element){
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.widget.ng:switch
+ * @name angular.Widget.ng:switch
  *
  * @description
  * Conditionally change the DOM structure.
@@ -833,12 +866,14 @@ angularWidget('a', function() {
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.widget.@ng:repeat
+ * @name angular.Widget.@ng:repeat
  *
  * @description
- * The `ng:repeat` widget instantiates a template once per item from a collection. The collection is
+ * The `ng:repeat` widget instantiates a template once per item from a collection. The collection
+ is
  * enumerated with the `ng:repeat-index` attribute, starting from 0. Each template instance gets 
- * its own scope, where the given loop variable is set to the current collection item, and `$index` 
+ * its own scope, where the given loop variable is set to the current collection item, and
+ `$index` 
  * is set to the item index or key.
  *
  * Special properties are exposed on the local scope of each template instance, including:
@@ -975,7 +1010,7 @@ angularWidget('@ng:repeat', function(expression, element){
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.widget.@ng:non-bindable
+ * @name angular.Widget.@ng:non-bindable
  *
  * @description
  * Sometimes it is necessary to write code which looks like bindings but which should be left alone
@@ -1009,7 +1044,7 @@ angularWidget("@ng:non-bindable", noop);
 
 /**
  * @ngdoc widget
- * @name angular.widget.ng:view
+ * @name angular.Widget.ng:view
  *
  * @description
  * # Overview
@@ -1018,7 +1053,7 @@ angularWidget("@ng:non-bindable", noop);
  * Every time the current route changes, the included view changes with it according to the
  * configuration of the `$route` service.
  *
- * This widget provides functionality similar to {@link angular.widget.ng:include ng:include} when
+ * This widget provides functionality similar to {@link angular.Widget.ng:include ng:include} when
  * used like this:
  *
  *     <ng:include src="$route.current.template" scope="$route.current.scope"></ng:include>
@@ -1038,7 +1073,8 @@ angularWidget("@ng:non-bindable", noop);
          <script>
            function MyCtrl($route) {
              $route.when('/overview', {controller: OverviewCtrl, template: 'guide.overview.html'});
-             $route.when('/bootstrap', {controller: BootstrapCtrl, template: 'guide.bootstrap.html'});
+             $route.when('/bootstrap', {controller: BootstrapCtrl, template:
+             'guide.bootstrap.html'});
              console.log(window.$route = $route);
            };
            MyCtrl.$inject = ['$route'];
@@ -1047,7 +1083,8 @@ angularWidget("@ng:non-bindable", noop);
            function OverviewCtrl(){}
          </script>
          <div ng:controller="MyCtrl">
-           <a href="#/overview">overview</a> | <a href="#/bootstrap">bootstrap</a> | <a href="#/undefined">undefined</a><br/>
+           <a href="#/overview">overview</a> | <a href="#/bootstrap">bootstrap</a> | <a
+           href="#/undefined">undefined</a><br/>
            The view is included below:
            <hr/>
            <ng:view></ng:view>

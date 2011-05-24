@@ -1,7 +1,32 @@
 /**
  * @workInProgress
+ * @ngdoc overview
+ * @name angular.Filter
+ * @description
+ * 
+ * Filters are used for formatting data displayed to the user.  
+ * 
+ * The general syntax in templates is as follows:
+ * 
+ *         {{ expression | [ filter_name ] }}
+ * 
+ * Following is the list of built-in angular filters:
+ * 
+ * * {@link angular.Filter.currency currency} 
+ * * {@link angular.Filter.date date} 
+ * * {@link angular.Filter.html html} 
+ * * {@link angular.Filter.json json} 
+ * * {@link angular.Filter.linky linky} 
+ * * {@link angular.Filter.lowercase lowercase} 
+ * * {@link angular.Filter.number number} 
+ * * {@link angular.Filter.uppercase uppercase} 
+ * 
+ * For more information about how angular filters work, and how to create your own filters, see {@link guide/filters Understanding Angular Filters} in the angular Developer Guide.
+ */
+/**
+ * @workInProgress
  * @ngdoc filter
- * @name angular.filter.currency
+ * @name angular.Filter.currency
  * @function
  *
  * @description
@@ -40,7 +65,7 @@ angularFilter.currency = function(amount){
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.filter.number
+ * @name angular.Filter.number
  * @function
  *
  * @description
@@ -160,7 +185,7 @@ var NUMBER_STRING = /^\d+$/;
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.filter.date
+ * @name angular.Filter.date
  * @function
  *
  * @description
@@ -251,7 +276,7 @@ angularFilter.date = function(date, format) {
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.filter.json
+ * @name angular.Filter.json
  * @function
  *
  * @description
@@ -294,7 +319,7 @@ angularFilter.json = function(object) {
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.filter.lowercase
+ * @name angular.Filter.lowercase
  * @function
  *
  * @see angular.lowercase
@@ -305,7 +330,7 @@ angularFilter.lowercase = lowercase;
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.filter.uppercase
+ * @name angular.Filter.uppercase
  * @function
  *
  * @see angular.uppercase
@@ -316,7 +341,7 @@ angularFilter.uppercase = uppercase;
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.filter.html
+ * @name angular.Filter.html
  * @function
  *
  * @description
@@ -409,7 +434,7 @@ angularFilter.html =  function(html, option){
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.filter.linky
+ * @name angular.Filter.linky
  * @function
  *
  * @description

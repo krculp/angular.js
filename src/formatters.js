@@ -1,3 +1,24 @@
+/**
+ * @workInProgress
+ * @ngdoc overview
+ * @name angular.Formatter
+ * @description
+ * 
+ * Formatters are used for translating data formats between those used in for display and those used
+ * for storage.  
+ * 
+ * Following is the list of built-in angular formatters:
+ * 
+ * * {@link angular.Formatter.boolean boolean} - Formats user input in boolean format
+ * * {@link angular.Formatter.index index} - Manages indexing into an HTML select widget
+ * * {@link angular.Formatter.json json} - Formats user input in JSON format
+ * * {@link angular.Formatter.list list} - Formats user input string as an array
+ * * {@link angular.Formatter.number} - Formats user input strings as a number
+ * * {@link angular.Formatter.trim} - Trims extras spaces from end of user input
+ * 
+ * For more information about how angular formatters work, and how to create your own formatters, see
+ * {@link guide/filters Understanding Angular Formatters} in the angular Developer Guide.
+ */
 function formatter(format, parse) {return {'format':format, 'parse':parse || format};}
 function toString(obj) {
   return (isDefined(obj) && obj !== null) ? "" + obj : obj;
@@ -10,7 +31,7 @@ angularFormatter.noop = formatter(identity, identity);
 /**
  * @workInProgress
  * @ngdoc formatter
- * @name angular.formatter.json
+ * @name angular.Formatter.json
  *
  * @description
  *   Formats the user input as JSON text.
@@ -41,7 +62,7 @@ angularFormatter.json = formatter(toJson, function(value){
 /**
  * @workInProgress
  * @ngdoc formatter
- * @name angular.formatter.boolean
+ * @name angular.Formatter.boolean
  *
  * @description
  *   Use boolean formatter if you wish to store the data as boolean.
@@ -70,7 +91,7 @@ angularFormatter['boolean'] = formatter(toString, toBoolean);
 /**
  * @workInProgress
  * @ngdoc formatter
- * @name angular.formatter.number
+ * @name angular.Formatter.number
  *
  * @description
  * Use number formatter if you wish to convert the user entered string to a number.
@@ -104,7 +125,7 @@ angularFormatter.number = formatter(toString, function(obj){
 /**
  * @workInProgress
  * @ngdoc formatter
- * @name angular.formatter.list
+ * @name angular.Formatter.list
  *
  * @description
  * Use list formatter if you wish to convert the user entered string to an array.
@@ -146,7 +167,7 @@ angularFormatter.list = formatter(
 /**
  * @workInProgress
  * @ngdoc formatter
- * @name angular.formatter.trim
+ * @name angular.Formatter.trim
  *
  * @description
  * Use trim formatter if you wish to trim extra spaces in user text.
@@ -180,7 +201,7 @@ angularFormatter.trim = formatter(
 /**
  * @workInProgress
  * @ngdoc formatter
- * @name angular.formatter.index
+ * @name angular.Formatter.index
  * @description
  * Index formatter is meant to be used with `select` input widget. It is useful when one needs
  * to select from a set of objects. To create pull-down one can iterate over the array of object

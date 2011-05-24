@@ -56,15 +56,22 @@
  */
 
 
-/**
+/*
+ * @workInProgress
  * @ngdoc overview
- * @name angular.mock
- * @namespace Namespace for all built-in angular mocks.
- *
+ * @name angular.Mock
  * @description
- * `angular.mock` is a namespace for all built-in mocks that ship with angular and automatically
- * replace real services if `angular-mocks.js` file is loaded after `angular.js` and before any
- * tests.
+ * 
+ * The `angular.mock` object is a namespace for all built-in mock services that ship with angular. 
+ * It automatically replaces real services if the `angular-mocks.js` file is loaded after
+ * `angular.js` and before any tests.
+ * 
+ * Built-in mocks:
+ * 
+ * * {@link angular.Mock.service.$browser $browser } - A mock implementation of the browser. 
+ * * {@link angular.Mock.service.$exceptionHandler $exceptionHandler } - A mock implementation of the
+ * angular service exception handler. 
+ * * {@link angular.Mock.service.$log $log } - A mock implementation of the angular service log. 
  */
 angular.mock = {};
 
@@ -72,7 +79,7 @@ angular.mock = {};
 /**
  * @workInProgress
  * @ngdoc service
- * @name angular.mock.service.$browser
+ * @name angular.Mock.service.$browser
  */
 function MockBrowser() {
   var self = this,
@@ -214,14 +221,14 @@ angular.service('$browser', function(){
 /**
  * @workInProgress
  * @ngdoc service
- * @name angular.mock.service.$exceptionHandler
+ * @name angular.Mock.service.$exceptionHandler
  *
  * @description
  * Mock implementation of {@link angular.service.$exceptionHandler} that rethrows any error passed
  * into `$exceptionHandler`. If any errors are are passed into the handler in tests, it typically
  * means that there is a bug in the application or test, so this mock will make these tests fail.
  *
- * See {@link angular.mock} for more info on angular mocks.
+ * See {@link angular.Mock} for more info on angular mocks.
  */
 angular.service('$exceptionHandler', function(e) {
   return function(e) {throw e;};
@@ -231,14 +238,14 @@ angular.service('$exceptionHandler', function(e) {
 /**
  * @workInProgress
  * @ngdoc service
- * @name angular.mock.service.$log
+ * @name angular.Mock.service.$log
  *
  * @description
  * Mock implementation of {@link angular.service.$log} that gathers all logged messages in arrays
  * (one array per logging level). These arrays are exposed as `logs` property of each of the
  * level-specific log function, e.g. for level `error` the array is exposed as `$log.error.logs`.
  *
- * See {@link angular.mock} for more info on angular mocks.
+ * See {@link angular.Mock} for more info on angular mocks.
  */
 angular.service('$log', MockLogFactory);
 

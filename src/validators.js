@@ -1,10 +1,39 @@
+/**
+ * @workInProgress
+ * @ngdoc overview
+ * @name angular.Validator
+ * @description
+ * 
+ * Most of the built-in angular validators are used to check user input against defined types or
+ * patterns.  You can easily create your own custom validators as well.  
+ * 
+ * Following is the list of built-in angular validators:
+ * 
+ * * {@link angular.Validator.asynchronous asynchronous()} - Provides asynchronous validation via a
+ * callback function.
+ * * {@link angular.Validator.date date()} - Checks user input against default date format:
+ * "MM/DD/YYYY"
+ * * {@link angular.Validator.email email()} - Validates that user input is a well-formed email
+ * address.
+ * * {@link angular.Validator.integer integer()} - Validates that user input is an integer
+ * * {@link angular.Validator.json json()} - Validates that user input is valid JSON
+ * * {@link angular.Validator.number number()} - Validates that user input is a number
+ * * {@link angular.Validator.phone phone()} - Validates that user input matches the pattern
+ * "1(123)123-1234"
+ * * {@link angular.Validator.regexp regexp()} - Restricts valid input to a specified regular
+ * expression pattern
+ * * {@link angular.Validator.url url()} - Validates that user input is a well-formed URL.
+ * 
+ * For more information about how angular validators work, and how to create your own validators, see
+ * {@link guide/validators Understanding Angular Validators} in the angular Developer Guide.
+ */
 extend(angularValidator, {
   'noop': function() { return null; },
 
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.validator.regexp
+   * @name angular.Validator.regexp
    * @description
    * Use regexp validator to restrict the input to any Regular Expression.
    *
@@ -49,7 +78,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.validator.number
+   * @name angular.Validator.number
    * @description
    * Use number validator to restrict the input to numbers with an
    * optional range. (See integer for whole numbers validator).
@@ -103,7 +132,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.validator.integer
+   * @name angular.Validator.integer
    * @description
    * Use number validator to restrict the input to integers with an
    * optional range. (See integer for whole numbers validator).
@@ -150,7 +179,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.validator.date
+   * @name angular.Validator.date
    * @description
    * Use date validator to restrict the user input to a valid date
    * in format in format MM/DD/YYYY.
@@ -189,7 +218,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.validator.email
+   * @name angular.Validator.email
    * @description
    * Use email validator if you wist to restrict the user input to a valid email.
    *
@@ -223,7 +252,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.validator.phone
+   * @name angular.Validator.phone
    * @description
    * Use phone validator to restrict the input phone numbers.
    *
@@ -260,7 +289,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.validator.url
+   * @name angular.Validator.url
    * @description
    * Use phone validator to restrict the input URLs.
    *
@@ -294,7 +323,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.validator.json
+   * @name angular.Validator.json
    * @description
    * Use json validator if you wish to restrict the user input to a valid JSON.
    *
@@ -331,7 +360,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.validator.asynchronous
+   * @name angular.Validator.asynchronous
    * @description
    * Use asynchronous validator if the validation can not be computed
    * immediately, but is provided through a callback. The widget
