@@ -1,7 +1,7 @@
 /**
  * @workInProgress
  * @ngdoc overview
- * @name angular.Filter
+ * @name angular.filter
  * @description
  * 
  * Filters are used for formatting data displayed to the user.  
@@ -26,7 +26,7 @@
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.Filter.currency
+ * @name angular.filter.currency
  * @function
  *
  * @description
@@ -65,7 +65,7 @@ angularFilter.currency = function(amount){
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.Filter.number
+ * @name angular.filter.number
  * @function
  *
  * @description
@@ -185,7 +185,7 @@ var NUMBER_STRING = /^\d+$/;
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.Filter.date
+ * @name angular.filter.date
  * @function
  *
  * @description
@@ -276,7 +276,7 @@ angularFilter.date = function(date, format) {
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.Filter.json
+ * @name angular.filter.json
  * @function
  *
  * @description
@@ -319,7 +319,7 @@ angularFilter.json = function(object) {
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.Filter.lowercase
+ * @name angular.filter.lowercase
  * @function
  *
  * @see angular.lowercase
@@ -330,7 +330,7 @@ angularFilter.lowercase = lowercase;
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.Filter.uppercase
+ * @name angular.filter.uppercase
  * @function
  *
  * @see angular.uppercase
@@ -341,7 +341,7 @@ angularFilter.uppercase = uppercase;
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.Filter.html
+ * @name angular.filter.html
  * @function
  *
  * @description
@@ -434,7 +434,7 @@ angularFilter.html =  function(html, option){
 /**
  * @workInProgress
  * @ngdoc filter
- * @name angular.Filter.linky
+ * @name angular.filter.linky
  * @function
  *
  * @description

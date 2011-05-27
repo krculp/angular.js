@@ -1,0 +1,103 @@
+@workInProgress
+@ngdoc overview
+@name Dev Guide: Understanding Angular Widgets
+@description
+
+Widgets are DOM elements that the browser doesn't already understand. Angular provides some
+built-in widgets (such as {@link api/widget.ng:repeat ng:repeat}), and you can create your own
+custom widgets. Widgets are intended to manipulate the DOM tree by adding new elements (unlike
+{@link guide.directive angular directives}, which are intended to modify only element properties).
+
+Widgets come in two types:
+
+* Element Widget — A custom DOM element.  An example of a custom element is shown below in
+_Creating a Custom Element Widget_.
+
+* Attribute Widget — A custom attribute on an existing DOM element.  An attribute widget is
+similar to an angular directive, with the main difference being that an attribute widget will
+always be processed before any directives that are specified on the same element.  Only one
+attribute widget is allowed per element.  An example of an attribute widget is shown below in
+_Creating a Custom Attribute Widget_.
+
+
+# Creating A Custom Element Widget
+
+When you create a widget, you do so in your own namespace, and assign it some custom behavior.
+Let's say we would like to create a new element type in the namespace `my` that can watch an
+expression and `alert()` the user with each new value:
+
+<pre>
+// An element widget
+<my:watch exp="name"/>
+</pre>
+
+You can implement `my:watch` like this:
+
+<pre>
+angular.widget('my:watch', function(compileElement) {
+  var compiler = this;
+  var exp = compileElement.attr('exp');
+  return function(linkElement) {
+    var currentScope = this;
+    currentScope.$watch(exp, function(value){
+      alert(value);
+    });
+  };
+});
+</pre>
+
+
+# Creating a Custom Attribute Widget
+
+Let's implement the same widget as in the example in Defining an Element Widget, but this time as
+an attribute that can be added to any existing DOM element:
+
+<pre>
+// An attribute widget (my-watch) in a div tag
+<div my-watch="name">text</div>
+</pre>
+You can implement `my:watch` attribute like this:
+<pre>
+angular.widget('@my:watch', function(expression, compileElement) {
+var compiler = this;
+return function(linkElement) {
+ var currentScope = this;
+ currentScope.$watch(expression, function(value){
+   alert(value);
+ });
+};
+});
+</pre>
+
+
+# Live Example of a Custom Element Widget
+
+<doc:example>
+<doc:source>
+<script>
+ angular.widget('my:time', function(compileElement){
+   compileElement.css('display', 'block');
+   return function(linkElement){
+     function update(){
+       linkElement.text('Current time is: ' + new Date());
+       setTimeout(update, 1000);
+     }
+     update();
+   };
+ });
+</script>
+<my:time></my:time>
+</doc:source>
+<doc:scenario>
+</doc:scenario>
+</doc:example>
+
+
+## Related Topics
+
+* {@link dev_guide.compile Angular HTML Compiler}
+
+
+## Related API
+
+* {@link api/angular.compile Compiler API}

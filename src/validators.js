@@ -1,7 +1,7 @@
 /**
  * @workInProgress
  * @ngdoc overview
- * @name angular.Validator
+ * @name angular.validator
  * @description
  * 
  * Most of the built-in angular validators are used to check user input against defined types or
@@ -33,7 +33,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.Validator.regexp
+   * @name angular.validator.regexp
    * @description
    * Use regexp validator to restrict the input to any Regular Expression.
    *
@@ -78,7 +78,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.Validator.number
+   * @name angular.validator.number
    * @description
    * Use number validator to restrict the input to numbers with an
    * optional range. (See integer for whole numbers validator).
@@ -132,7 +132,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.Validator.integer
+   * @name angular.validator.integer
    * @description
    * Use number validator to restrict the input to integers with an
    * optional range. (See integer for whole numbers validator).
@@ -179,7 +179,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.Validator.date
+   * @name angular.validator.date
    * @description
    * Use date validator to restrict the user input to a valid date
    * in format in format MM/DD/YYYY.
@@ -218,7 +218,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.Validator.email
+   * @name angular.validator.email
    * @description
    * Use email validator if you wist to restrict the user input to a valid email.
    *
@@ -252,7 +252,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.Validator.phone
+   * @name angular.validator.phone
    * @description
    * Use phone validator to restrict the input phone numbers.
    *
@@ -289,7 +289,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.Validator.url
+   * @name angular.validator.url
    * @description
    * Use phone validator to restrict the input URLs.
    *
@@ -323,7 +323,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.Validator.json
+   * @name angular.validator.json
    * @description
    * Use json validator if you wish to restrict the user input to a valid JSON.
    *
@@ -360,7 +360,7 @@ extend(angularValidator, {
   /**
    * @workInProgress
    * @ngdoc validator
-   * @name angular.Validator.asynchronous
+   * @name angular.validator.asynchronous
    * @description
    * Use asynchronous validator if the validation can not be computed
    * immediately, but is provided through a callback. The widget

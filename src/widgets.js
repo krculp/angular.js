@@ -1,7 +1,7 @@
 /**
  * @workInProgress
  * @ngdoc overview
- * @name angular.Widget
+ * @name angular.widget
  * @description
  * 
  * Widgets are custom DOM elements.  An angular widget can be either a custom 
@@ -25,7 +25,7 @@
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.Widget.HTML
+ * @name angular.widget.HTML
  *
  * @description
  * The most common widgets you will use will be in the form of the
@@ -209,7 +209,7 @@ function compileFormatter(expr) {
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.Widget.@ng:validate
+ * @name angular.widget.@ng:validate
  *
  * @description
  * The `ng:validate` attribute widget validates the user input. If the input does not pass
@@ -251,7 +251,7 @@ function compileFormatter(expr) {
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.Widget.@ng:required
+ * @name angular.widget.@ng:required
  *
  * @description
  * The `ng:required` attribute widget validates that the user input is present. It is a special
@@ -283,7 +283,7 @@ function compileFormatter(expr) {
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.Widget.@ng:format
+ * @name angular.widget.@ng:format
  *
  * @description
  * The `ng:format` attribute widget formats stored data to user-readable text and parses the text
@@ -631,7 +631,7 @@ angularWidget('option', function(){
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.Widget.ng:include
+ * @name angular.widget.ng:include
  *
  * @description
  * Include external HTML fragment.
@@ -724,7 +724,7 @@ angularWidget('ng:include', function(element){
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.Widget.ng:switch
+ * @name angular.widget.ng:switch
  *
  * @description
  * Conditionally change the DOM structure.
@@ -866,7 +866,7 @@ angularWidget('a', function() {
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.Widget.@ng:repeat
+ * @name angular.widget.@ng:repeat
  *
  * @description
  * The `ng:repeat` widget instantiates a template once per item from a collection. The collection
@@ -1010,7 +1010,7 @@ angularWidget('@ng:repeat', function(expression, element){
 /**
  * @workInProgress
  * @ngdoc widget
- * @name angular.Widget.@ng:non-bindable
+ * @name angular.widget.@ng:non-bindable
  *
  * @description
  * Sometimes it is necessary to write code which looks like bindings but which should be left alone
@@ -1044,7 +1044,7 @@ angularWidget("@ng:non-bindable", noop);
 
 /**
  * @ngdoc widget
- * @name angular.Widget.ng:view
+ * @name angular.widget.ng:view
  *
  * @description
  * # Overview

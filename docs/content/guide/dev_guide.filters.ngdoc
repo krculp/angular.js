@@ -1,0 +1,31 @@
+@workInProgress
+@ngdoc overview
+@name Developer Guide: Understanding Angular Filters
+@description
+
+Angular filters format data for display to the user. For example, when you apply the "currency"
+filter to a data value of `1234.5678` it displays as: `$1,234.57`. 
+
+In addition to formatting data, filters can also modify the DOM. This allows filters to handle
+tasks such as conditionally applying CSS styles to filtered output.
+
+The Angular framework provides a standard set of filters for common operations:
+
+* {@link api/angular.filter.currency currency}
+* {@link api/angular.filter.date date}
+* {@link api/angular.filter.html html}
+* {@link api/angular.filter.json json}
+* {@link api/angular.filter.linky linky}
+* {@link api/angular.filter.uppercase lowercase}
+* {@link api/angular.filter.number number}
+* {@link api/angular.filter.uppercase uppercase}
+
+
+## Related Topics
+
+* {@link dev_guide.filters.using_filters Using Angular Filters}
+* {@link dev_guide.filters.creating_filters Creating Angular Filters}
+
+## Related API
+
+* {@link api/angular.Filter Angular Filter API}

@@ -107,7 +107,7 @@ function errorHandlerFor(element, error) {
 /**
  * @workInProgress
  * @ngdoc overview
- * @name angular.Scope
+ * @name angular.scope
  *
  * @description
  * Scope is a JavaScript object and the execution context for expressions. You can think about
@@ -145,7 +145,7 @@ function createScope(parent, providers, instanceCache) {
     /**
      * @workInProgress
      * @ngdoc function
-     * @name angular.Scope.$bind
+     * @name angular.scope.$bind
      * @function
      *
      * @description
@@ -167,7 +167,7 @@ function createScope(parent, providers, instanceCache) {
     /**
      * @workInProgress
      * @ngdoc function
-     * @name angular.Scope.$get
+     * @name angular.scope.$get
      * @function
      *
      * @description
@@ -194,7 +194,7 @@ function createScope(parent, providers, instanceCache) {
     /**
      * @workInProgress
      * @ngdoc function
-     * @name angular.Scope.$set
+     * @name angular.scope.$set
      * @function
      *
      * @description
@@ -220,7 +220,7 @@ function createScope(parent, providers, instanceCache) {
     /**
      * @workInProgress
      * @ngdoc function
-     * @name angular.Scope.$eval
+     * @name angular.scope.$eval
      * @function
      *
      * @description
@@ -275,7 +275,7 @@ function createScope(parent, providers, instanceCache) {
     /**
      * @workInProgress
      * @ngdoc function
-     * @name angular.Scope.$tryEval
+     * @name angular.scope.$tryEval
      * @function
      *
      * @description
@@ -333,7 +333,7 @@ function createScope(parent, providers, instanceCache) {
     /**
      * @workInProgress
      * @ngdoc function
-     * @name angular.Scope.$watch
+     * @name angular.scope.$watch
      * @function
      *
      * @description
@@ -395,7 +395,7 @@ function createScope(parent, providers, instanceCache) {
     /**
      * @workInProgress
      * @ngdoc function
-     * @name angular.Scope.$onEval
+     * @name angular.scope.$onEval
      * @function
      *
      * @description
@@ -440,7 +440,7 @@ function createScope(parent, providers, instanceCache) {
     /**
      * @workInProgress
      * @ngdoc function
-     * @name angular.Scope.$become
+     * @name angular.scope.$become
      * @function
      * @deprecated This method will be removed before 1.0
      *
@@ -484,7 +484,7 @@ function createScope(parent, providers, instanceCache) {
     /**
      * @workInProgress
      * @ngdoc function
-     * @name angular.Scope.$new
+     * @name angular.scope.$new
      * @function
      *
      * @description
@@ -513,7 +513,7 @@ function createScope(parent, providers, instanceCache) {
     /**
      * @workInProgress
      * @ngdoc function
-     * @name angular.Scope.$service
+     * @name angular.scope.$service
      * @function
      *
      * @description

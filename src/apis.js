@@ -14,7 +14,7 @@ var angularGlobal = {
 
 /**
  * @ngdoc overview
- * @name angular.Object
+ * @name angular.object
  * @function
  *
  * @description
@@ -45,7 +45,7 @@ var angularObject = {
 
 /**
  * @ngdoc overview
- * @name angular.Array
+ * @name angular.array
  *
  * @description
  * A namespace for utility functions for the manipulation of JavaScript Array objects.
@@ -80,7 +80,7 @@ var angularArray = {
 
   /**
    * @ngdoc function
-   * @name angular.Array.indexOf
+   * @name angular.array.indexOf
    * @function
    *
    * @description
@@ -120,7 +120,7 @@ var angularArray = {
 
   /**
    * @ngdoc function
-   * @name angular.Array.sum
+   * @name angular.array.sum
    * @function
    *
    * @description
@@ -192,7 +192,7 @@ var angularArray = {
 
   /**
    * @ngdoc function
-   * @name angular.Array.remove
+   * @name angular.array.remove
    * @function
    *
    * @description
@@ -250,7 +250,7 @@ var angularArray = {
 
   /**
    * @ngdoc function
-   * @name angular.Array.filter
+   * @name angular.array.filter
    * @function
    *
    * @description
@@ -412,7 +412,7 @@ var angularArray = {
   /**
    * @workInProgress
    * @ngdoc function
-   * @name angular.Array.add
+   * @name angular.array.add
    * @function
    *
    * @description
@@ -487,7 +487,7 @@ var angularArray = {
 
   /**
    * @ngdoc function
-   * @name angular.Array.count
+   * @name angular.array.count
    * @function
    *
    * @description
@@ -546,7 +546,7 @@ var angularArray = {
 
   /**
    * @ngdoc function
-   * @name angular.Array.orderBy
+   * @name angular.array.orderBy
    * @function
    *
    * @description
@@ -674,7 +674,7 @@ var angularArray = {
 
   /**
    * @ngdoc function
-   * @name angular.Array.limitTo
+   * @name angular.array.limitTo
    * @function
    *
    * @description

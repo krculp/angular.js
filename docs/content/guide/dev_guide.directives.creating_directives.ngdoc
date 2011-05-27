@@ -1,0 +1,32 @@
+@workInProgress
+@ngdoc overview
+@name Developer Guide: Directives: Creating Angular Directives
+@description
+
+The following code snippet shows how to define a custom directive. You define a new directive by
+extending the {@link compiler angular HTML compiler}. The code snippet below is a simplified
+definition of the built-in {@link api/angular.directive.ng:bind ng:bind} directive:
+
+<pre>
+angular.directive('ng:bind', function(expression, compiledElement) {
+var compiler = this;
+return function(linkElement) {
+var currentScope = this;
+currentScope.$watch(expression, function(value) {
+  linkElement.text(value);
+});
+};
+});
+</pre>
+
+
+## Related Docs
+
+* {@link dev_guide.directives Understanding Angular Directives}
+* {@link dev_guide.directives_widgets Comparing Directives and Widgets}
+* {@link dev_guide.compiler Angular HTML Compiler}
+
+
+## Related API
+
+* {@link api/Directive Angular Directive API}.

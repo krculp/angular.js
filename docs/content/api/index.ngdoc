@@ -1,0 +1,59 @@
+@workInProgress
+@ngdoc overview
+@name API Reference
+@description
+
+# API specification for angular version ________.
+
+## Angular Compiler API
+
+* {@link angular.Widget Widgets} - Angular custom DOM element
+* {@link angular.Directive Directives} - Angular DOM element attributes
+* {@link angular.Filter Filters} - Angular filter functions
+* {@link angular.Formatter Formatters} - Angular formatting functions
+* {@link angular.Validator Validators} - Angular validators
+
+
+## Angular Scope API
+
+* {@link angular.Scope Scope Object} - Angular scope object functions
+
+
+## Angular Services API
+
+* {@link angular.service Angular Services} 
+
+
+## Angular Testing API
+
+* {@link angluar.Mock Testing Mocks API} - Mock objects for testing
+
+
+## Angular Utilities API
+
+* {@link angular.bind angular.bind() }
+* {@link angular.compile angular.compile() }
+* {@link angular.extend angular.extend() }
+* {@link angular.forEach angular.forEach() }
+* {@link angular.fromJson angular.fromJson() }
+* {@link angular.identify angular.identity() }
+* {@link angular.injector angular.injector() }
+* {@link angular.isArray angular.isArray() }
+* {@link angular.isDate angular.isDate() }
+* {@link angular.isDefined angular.isDefined() }
+* {@link angular.isFunction angular.isFunction() }
+* {@link angular.isNumber angular.isNumber() }
+* {@link angular.isObject angular.isObject() }
+* {@link angular.isString angular.isString() }
+* {@link angular.isUndefined angular.isUndefined() }
+* {@link angular.lowercase angular.lowercase() }
+* {@link angular.noop angular.noop() }
+* {@link angular.toJson angular.toJson() }
+* {@link angular.uppercase angular.uppercase() }
+
+
+
+## Augmented JavaScript Objects
+
+* {@link angular.Object Object API} - Utility functions for JavaScript objects
+* {@link angular.Array Array API} - Utility functions for JavaScript arrays

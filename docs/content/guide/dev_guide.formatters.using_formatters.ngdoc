@@ -1,0 +1,31 @@
+@workInProgress
+@ngdoc overview
+@name Developer Guide: Angular Formatters: Using Angular Formatters
+@description
+
+The following snippet shows how to use a formatter in a template. The formatter below is
+`ng:format="reverse"`, added as an attribute to an `<input>` tag.  
+
+<pre>
+Formatted:
+<input type="text" name="data" value="angular" ng:format="reverse"/>
+<br/>
+</pre>
+
+The following sample shows how to use a formatter in JavaScript:
+
+<pre>
+...
+var userInputString = angular.formatter.json.format(modelValue);
+...
+</pre>
+
+
+## Related Topics
+
+* {@link dev_guide.formatters Angular Formatters}
+* {@link dev_guide.formatters.creating_formatters Creating Angular Formatters}
+
+## Related API
+
+* {@link api/angular.Formatter Angular Formatter API}

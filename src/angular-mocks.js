@@ -59,7 +59,7 @@
 /*
  * @workInProgress
  * @ngdoc overview
- * @name angular.Mock
+ * @name angular.mock
  * @description
  * 
  * The `angular.mock` object is a namespace for all built-in mock services that ship with angular. 
@@ -79,7 +79,7 @@ angular.mock = {};
 /**
  * @workInProgress
  * @ngdoc service
- * @name angular.Mock.service.$browser
+ * @name angular.mock.service.$browser
  */
 function MockBrowser() {
   var self = this,
@@ -221,7 +221,7 @@ angular.service('$browser', function(){
 /**
  * @workInProgress
  * @ngdoc service
- * @name angular.Mock.service.$exceptionHandler
+ * @name angular.mock.service.$exceptionHandler
  *
  * @description
  * Mock implementation of {@link angular.service.$exceptionHandler} that rethrows any error passed
@@ -238,7 +238,7 @@ angular.service('$exceptionHandler', function(e) {
 /**
  * @workInProgress
  * @ngdoc service
- * @name angular.Mock.service.$log
+ * @name angular.mock.service.$log
  *
  * @description
  * Mock implementation of {@link angular.service.$log} that gathers all logged messages in arrays

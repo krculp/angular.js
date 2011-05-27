@@ -1,7 +1,7 @@
 /**
  * @workInProgress
  * @ngdoc overview
- * @name angular.Directive
+ * @name angular.directive
  * @description
  * 
  * Custom attributes for DOM elements.  Directives modify the behavior of the element they are
@@ -42,7 +42,7 @@
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:init
+ * @name angular.directive.ng:init
  *
  * @description
  * The `ng:init` attribute specifies initialization tasks to be executed
@@ -75,7 +75,7 @@ angularDirective("ng:init", function(expression){
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.@ng:controller
+ * @name angular.directive.@ng:controller
  *
  * @description
  * The `ng:controller` directive assigns behavior to a scope. This is a key aspect of how angular
@@ -174,7 +174,7 @@ angularDirective("ng:controller", function(expression){
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:eval
+ * @name angular.directive.ng:eval
  *
  * @description
  * The `ng:eval` allows you to execute a binding which has side effects
@@ -220,7 +220,7 @@ angularDirective("ng:eval", function(expression){
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:bind
+ * @name angular.directive.ng:bind
  *
  * @description
  * The `ng:bind` attribute asks angular to replace the text content of this
@@ -329,7 +329,7 @@ function compileBindTemplate(template){
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:bind-template
+ * @name angular.directive.ng:bind-template
  *
  * @description
  * The `ng:bind-template` attribute specifies that the element
@@ -386,7 +386,7 @@ var REMOVE_ATTRIBUTES = {
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:bind-attr
+ * @name angular.directive.ng:bind-attr
  *
  * @description
  * The `ng:bind-attr` attribute specifies that {@link guide/data-binding databindings}  should be
@@ -472,7 +472,7 @@ angularDirective("ng:bind-attr", function(expression){
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:click
+ * @name angular.directive.ng:click
  *
  * @description
  * The ng:click allows you to specify custom behavior when
@@ -521,7 +521,7 @@ angularDirective("ng:click", function(expression, element){
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:submit
+ * @name angular.directive.ng:submit
  *
  * @description
  * Enables binding angular expressions to onsubmit events.
@@ -586,7 +586,7 @@ function ngClass(selector) {
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:class
+ * @name angular.directive.ng:class
  *
  * @description
  * The `ng:class` allows you to set CSS class on HTML element
@@ -626,7 +626,7 @@ angularDirective("ng:class", ngClass(function(){return true;}));
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:class-odd
+ * @name angular.directive.ng:class-odd
  *
  * @description
  * The `ng:class-odd` and `ng:class-even` works exactly as
@@ -664,7 +664,7 @@ angularDirective("ng:class-odd", ngClass(function(i){return i % 2 === 0;}));
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:class-even
+ * @name angular.directive.ng:class-even
  *
  * @description
  * The `ng:class-odd` and `ng:class-even` works exactly as
@@ -702,7 +702,7 @@ angularDirective("ng:class-even", ngClass(function(i){return i % 2 === 1;}));
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:show
+ * @name angular.directive.ng:show
  *
  * @description
  * The `ng:show` and `ng:hide` directives show or hide a portion of the DOM tree (HTML)
@@ -743,7 +743,7 @@ angularDirective("ng:show", function(expression, element){
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:hide
+ * @name angular.directive.ng:hide
  *
  * @description
  * The `ng:hide` and `ng:show` directives hide or show a portion
@@ -784,7 +784,7 @@ angularDirective("ng:hide", function(expression, element){
 /**
  * @workInProgress
  * @ngdoc directive
- * @name angular.Directive.ng:style
+ * @name angular.directive.ng:style
  *
  * @description
  * The ng:style allows you to set CSS style on an HTML element conditionally.
