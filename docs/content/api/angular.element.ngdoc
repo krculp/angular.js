@@ -4,22 +4,22 @@
 @function
 
 @description
-Wraps a raw DOM element or HTML string as [jQuery](http://jquery.com) element.
-`angular.element` is either an alias for [jQuery](http://api.jquery.com/jQuery/) function if
-jQuery is loaded or a function that wraps the element or string in angular's jQuery lite
+Wraps a raw DOM element or HTML string as a [jQuery](http://jquery.com) element.
+`angular.element` is either an alias for a [jQuery](http://api.jquery.com/jQuery/) function (if
+jQuery is loaded) or a function that wraps the element or string in angular's jQuery-lite
 implementation.
 
-Real jQuery always takes precedence (as long as it was loaded before `DOMContentEvent`)
+Real jQuery always takes precedence (as long as it was loaded before `DOMContentEvent`).
 
-Angular's jQuery lite implementation is a tiny API-compatible subset of jQuery which allows
-angular to manipulate DOM. The jQuery lite implements only a subset of jQuery api, with the
-focus on the most commonly needed functionality and minimal footprint. For this reason only a
-limited number of jQuery methods, arguments and invocation styles are supported.
+Angular's jQuery-lite implementation is a tiny, API-compatible subset of jQuery that 
+angular uses to manipulate DOM. Angular's jQuery-lite implements only a subset of the jQuery api,
+with the focus on the most commonly needed functionality and a minimal footprint. For this reason
+only a limited number of jQuery methods, arguments, and invocation styles are supported.
 
 NOTE: All element references in angular are always wrapped with jQuery (lite) and are never
 raw DOM references.
 
-## Angular's jQuery lite implements these functions:
+## Angular's jQuery-lite implements these functions:
 
 - [addClass()](http://api.jquery.com/addClass/)
 - [after()](http://api.jquery.com/after/)
@@ -40,8 +40,11 @@ raw DOM references.
 - [text()](http://api.jquery.com/text/)
 - [trigger()](http://api.jquery.com/trigger/)
 
-## Additionally these methods extend the jQuery and  are available in both jQuery and jQuery lite
-version:
+
+## Additional Methods Extending jQuery
+
+The following methods extend jQuery and are available in both jQuery and jQuery-lite
+versions:
 
 - `scope()` - retrieves the current angular scope of the element.
 

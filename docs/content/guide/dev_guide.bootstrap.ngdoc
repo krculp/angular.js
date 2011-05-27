@@ -3,12 +3,12 @@
 @name Developer Guide: Initializing Angular
 @description
 
-Initializing angular involves loading the `angular.js` script in your page, and specifying how
-angular should process and manage the page.  Initialization options include the following:
+Initializing angular consists of loading the `angular.js` script in your page, and specifying how
+angular should process and manage the page.  To initialize angular you do the  the following:
 
-* Specifying the angular namespace 
-* Choosing which flavor of angular script to load (debug or production)
-* Specifying whether or not angular should process and manage the page automatically
+* Specify the angular namespace in the `<html>` tag
+* Choos which flavor of angular script to load (debug or production)
+* Specify whether or not angular should process and manage the page automatically (`ng:autobind`)
 
 The simplest way to initialize angular is to load the angular script and tell angular to compile
 and manage the whole page.  You do this as follows:

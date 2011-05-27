@@ -109,4 +109,4 @@ code and insert the `$inject` into the source code so that it can be minified/ob
 
 ## Related API
 
-* {@link api/angular.services Services API}
+* {@link api/angular.service Services API}
