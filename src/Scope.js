@@ -127,7 +127,7 @@ function errorHandlerFor(element, error) {
  * * {@link angular.Scope.$tryEval $tryEval()} - 
  * * {@link angular.Scope.$watch $watch()} - 
  * 
- * For more information about how angular scope objects work,, see {@link guide/scopes Angular Scope
+ * For more information about how angular scope objects work, see {@link guide/dev_guide.scopes Angular Scope
  * Objects} in the angular Developer Guide.
  */
 function createScope(parent, providers, instanceCache) {

@@ -37,7 +37,7 @@
  * * {@link angular.Directive.ng:submit} - Binds angular expressions to `onSubmit` events.
  * 
  * For more information about how angular directives work, and how to create your own directives, see
- * {@link guide/directives Understanding Angular Directives} in the angular Developer Guide.
+ * {@link guide/dev_guide.compiler.directives Understanding Angular Directives} in the angular Developer Guide.
  */
 /**
  * @workInProgress

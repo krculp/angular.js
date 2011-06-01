@@ -155,26 +155,31 @@ Template.prototype = {
  * The following methods are available for use when you write your own widgets, directives,
  * and markup.  (Recall that the compile function's this is a reference to the compiler.)
  * 
- *  `compile(element)` - returns linker - 
+ *  * `compile(element)` - returns linker - 
  *  Invoke a new instance of the compiler to compile a DOM element and return a linker function. 
  *  You can apply the linker function to the original element or a clone of the original element. 
  *  The linker function returns a scope.
  *
- *  `comment(commentText)` - returns element - 
+ *  * `comment(commentText)` - returns element - 
  *  Create a comment element.
  *
- *  `element(elementName)` - returns element - 
+ *  * `element(elementName)` - returns element - 
  *  Create an element by name.
  *
- *  `text(text)` - returns element - 
+ *  * `text(text)` - returns element - 
  *  Create a text element.
  *
- *  `descend([set])` - returns descend state (true or false)
+ *  * `descend([set])` - returns descend state (true or false)
  *  Get or set the current descend state. If true the compiler will descend to children elements.
  *
- *  `directives([set])` - returns directive state (true or false)
+ *  * `directives([set])` - returns directive state (true or false)
  *  Get or set the current directives processing state. The compiler will process directives only 
  *  when directives set to true.
+ *
+ * For information on how the compiler works, see the
+ * {@link guide/dev_guide.compiler Angular HTML Compiler} 
+ * section of the Developer Guide.
+ *
  */
 function Compiler(markup, attrMarkup, directives, widgets){
   this.markup = markup;
