@@ -228,7 +228,7 @@ angular.service('$browser', function(){
  * into `$exceptionHandler`. If any errors are are passed into the handler in tests, it typically
  * means that there is a bug in the application or test, so this mock will make these tests fail.
  *
- * See {@link angular.Mock} for more info on angular mocks.
+ * See {@link angular.mock} for more info on angular mocks.
  */
 angular.service('$exceptionHandler', function(e) {
   return function(e) {throw e;};
@@ -245,7 +245,7 @@ angular.service('$exceptionHandler', function(e) {
  * (one array per logging level). These arrays are exposed as `logs` property of each of the
  * level-specific log function, e.g. for level `error` the array is exposed as `$log.error.logs`.
  *
- * See {@link angular.Mock} for more info on angular mocks.
+ * See {@link angular.mock} for more info on angular mocks.
  */
 angular.service('$log', MockLogFactory);
 

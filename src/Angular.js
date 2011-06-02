@@ -465,7 +465,7 @@ function map(obj, iterator, context) {
  * length.
  *
  * Note: this function is used to augment the Object type in angular expressions. See
- * {@link angular.Object} for more info.
+ * {@link angular.object} for more info.
  *
  * @param {Object|Array|string} obj Object, array or string to inspect.
  * @param {boolean} [ownPropsOnly=false] Count only "own" properties in an object
@@ -543,7 +543,7 @@ function isLeafNode (node) {
  * If `destination` is provided, all of its properties will be deleted.
  *
  * Note: this function is used to augment the Object type in angular expressions. See
- * {@link angular.Object} for more info.
+ * {@link angular.object} for more info.
  *
  * @param {*} source The source to be used to make a copy.
  *                   Can be any type including primitives, `null` and `undefined`.
@@ -626,7 +626,7 @@ function copy(source, destination){
  * Supports values types, arrays and objects.
  *
  * Note: this function is used to augment the Object type in angular expressions. See
- * {@link angular.Object} for more info.
+ * {@link angular.object} for more info.
  *
  * @param {*} o1 Object or value to compare.
  * @param {*} o2 Object or value to compare.

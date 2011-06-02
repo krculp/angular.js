@@ -79,14 +79,15 @@ Template.prototype = {
  * @function
  *
  * @description
- * Compiles a piece of HTML string or DOM into a template and produces a template function, which
- * can then be used to link {@link angular.Scope scope} and the template together.
+ * Compiles a piece of HTML string or DOM into a template and produces a template function, 
+ * which can then be used to link {@link angular.scope scope} and the template together.
  *
  * The compilation is a process of walking the DOM tree and trying to match DOM elements to
- * {@link angular.markup markup}, {@link angular.attrMarkup attrMarkup},
- * {@link angular.widget widgets}, and {@link angular.directive directives}. For each match it
- * executes coresponding markup, attrMarkup, widget or directive template function and collects the
- * instance functions into a single template function which is then returned.
+ * {@link guide/dev_guide.compiler.markup markup, attrMarkup}, 
+ * {@link guide/dev_guide.compiler.widgets widgets}, and {@link guide/dev_guide.compiler.directives directives}. 
+ * For each match it executes coresponding markup, attrMarkup, widget or directive template 
+ * function and collects the instance functions into a single template function which is then 
+ * returned.
  *
  * The template function can then be used once to produce the view or as it is the case with
  * {@link angular.widget.@ng:repeat repeater} many-times, in which case each call results in a view
@@ -110,7 +111,7 @@ Template.prototype = {
  * @returns {function([scope][, cloneAttachFn])} a template function which is used to bind template
  * (a DOM element/tree) to a scope. Where:
  *
- *  * `scope` - A {@link angular.Scope Scope} to bind to. If none specified, then a new
+ *  * `scope` - A {@link angular.scope Scope} to bind to. If none specified, then a new
  *               root scope is created.
  *  * `cloneAttachFn` - If `cloneAttachFn` is provided, then the link function will clone the
  *               `template` and call the `cloneAttachFn` function allowing the caller to attach the

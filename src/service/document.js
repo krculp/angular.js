@@ -5,7 +5,7 @@
  * @requires $window
  *
  * @description
- * A {@link angular.element jQuery (lite)}-wrapped reference to the browser's `window.document`
+ * A jQuery (lite)-wrapped reference to the browser's `window.document`
  * element.
  */
 angularServiceInject("$document", function(window){

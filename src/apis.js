@@ -28,10 +28,10 @@ var angularGlobal = {
  * __* JavaScript code:__ Functions don't augment the Object type and must be invoked as functions of
  * `angular.Object` as `angular.Object.foo(myObject, param2)`.
  * 
- * * {@link angular.Object.copy angular.Object.copy()} - Creates a deep copy of the source parameter
- * * {@link angular.Object.equals angular.Object.equals()} - Determines if two objects or values are
+ * * {@link angular.object.copy angular.Object.copy()} - Creates a deep copy of the source parameter
+ * * {@link angular.object.equals angular.Object.equals()} - Determines if two objects or values are
  * equivalent
- * * {@link angular.Object.size angular.Object.size()} - Determines the number of elements in
+ * * {@link angular.object.size angular.Object.size()} - Determines the number of elements in
  * strings, arrays, and objects.
  */
 var angularCollection = {
@@ -64,16 +64,16 @@ var angularObject = {
  * 
  * The following APIs are built-in to the angular Array object:
  * 
- * * {@link angular.Array.add angular.Array.add()} - Optionally adds a new element to an array.
- * * {@link angular.Array.count angular.Array.count()} - Determines the number of elements in an
+ * * {@link angular.array.add angular.Array.add()} - Optionally adds a new element to an array.
+ * * {@link angular.array.count angular.Array.count()} - Determines the number of elements in an
  * array.
- * * {@link angular.Array.filter angular.Array.filter()} - Returns a subset of items as a new array.
- * * {@link angular.Array.indexOf angular.Array.indexOf()} - Determines the index of an array value.
- * * {@link angular.Array.limitTo angular.Array.limitTo()} - Creates a new array off the front or
+ * * {@link angular.array.filter angular.Array.filter()} - Returns a subset of items as a new array.
+ * * {@link angular.array.indexOf angular.Array.indexOf()} - Determines the index of an array value.
+ * * {@link angular.array.limitTo angular.Array.limitTo()} - Creates a new array off the front or
  * back of an existing array.
- * * {@link angular.Array.orderBy angular.Array.orderBy()} - Orders array elements
- * * {@link angular.Array.remove angular.Array.remove()} - Removes array elements
- * * {@link angular.Array.sum angular.Array.sum()} - Sums the number elements in an array
+ * * {@link angular.array.orderBy angular.Array.orderBy()} - Orders array elements
+ * * {@link angular.array.remove angular.Array.remove()} - Removes array elements
+ * * {@link angular.array.sum angular.Array.sum()} - Sums the number elements in an array
  */
 var angularArray = {
 
@@ -87,7 +87,7 @@ var angularArray = {
    * Determines the index of `value` in `array`.
    *
    * Note: this function is used to augment the `Array` type in angular expressions. See
-   * {@link angular.Array} for more info.
+   * {@link angular.array} for more info.
    *
    * @param {Array} array Array to search.
    * @param {*} value Value to search for.
@@ -128,7 +128,7 @@ var angularArray = {
    * it is evaluated once for each element in `array` and then the sum of these values is returned.
    *
    * Note: this function is used to augment the `Array` type in angular expressions. See
-   * {@link angular.Array} for more info.
+   * {@link angular.array} for more info.
    *
    * @param {Array} array The source array.
    * @param {(string|function())=} expression Angular expression or a function to be evaluated for each
@@ -197,11 +197,11 @@ var angularArray = {
    *
    * @description
    * Modifies `array` by removing an element from it. The element will be looked up using the
-   * {@link angular.Array.indexOf indexOf} function on the `array` and only the first instance of
+   * {@link angular.array.indexOf indexOf} function on the `array` and only the first instance of
    * the element will be removed.
    *
    * Note: this function is used to augment the `Array` type in angular expressions. See
-   * {@link angular.Array} for more info.
+   * {@link angular.array} for more info.
    *
    * @param {Array} array Array from which an element should be removed.
    * @param {*} value Element to be removed.
@@ -257,7 +257,7 @@ var angularArray = {
    * Selects a subset of items from `array` and returns it as a new array.
    *
    * Note: this function is used to augment the `Array` type in angular expressions. See
-   * {@link angular.Array} for more info.
+   * {@link angular.array} for more info.
    *
    * @param {Array} array The source array.
    * @param {string|Object|function()} expression The predicate to be used for selecting items from
@@ -421,7 +421,7 @@ var angularArray = {
    * an empty object.
    *
    * Note: this function is used to augment the `Array` type in angular expressions. See
-   * {@link angular.Array} for more info.
+   * {@link angular.array} for more info.
    *
    * @param {Array} array The array expand.
    * @param {*=} [value={}] The value to be added.
@@ -495,7 +495,7 @@ var angularArray = {
    * for which the `condition` evaluates to `true`.
    *
    * Note: this function is used to augment the `Array` type in angular expressions. See
-   * {@link angular.Array} for more info.
+   * {@link angular.array} for more info.
    *
    * @param {Array} array The array to count elements in.
    * @param {(function()|string)=} condition A function to be evaluated or angular expression to be
@@ -553,7 +553,7 @@ var angularArray = {
    * Orders `array` by the `expression` predicate.
    *
    * Note: this function is used to augment the `Array` type in angular expressions. See
-   * {@link angular.Array} for more info.
+   * {@link angular.array} for more info.
    *
    * @param {Array} array The array to sort.
    * @param {function(*)|string|Array.<(function(*)|string)>} expression A predicate to be
@@ -682,7 +682,7 @@ var angularArray = {
    * source `array`.
    *
    * Note: this function is used to augment the `Array` type in angular expressions. See
-   * {@link angular.Array} for more info.
+   * {@link angular.array} for more info.
    *
    * @param {Array} array Source array to be limited.
    * @param {string|Number} limit The length of the returned array. If the number is positive, the
